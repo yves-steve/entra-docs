@@ -25,7 +25,7 @@ Non-admins| <li>Users in the organization that do not have access to customer da
 Microsoft recommends that you broadly deploy phishing-resistant passwordless authentication across your organization. We recommend you start your deployment with one of the user personas first. 
 
 Microsoft recommends that you categorize your users based on these personas, and then place users into a Microsoft Entra ID group specifically for that user persona. These groups are used in later steps to [roll out credentials](~/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication.md#drive-usage-of-phishing-resistant-credentials) 
-to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforcement-of-phishing-resistence-on-resources).
+to different types of users, and when you begin to [enforce the use of phishing-resistant passwordless credentials](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforcement-of-phishing-resistance-on-resources).
 
 Using groups you can continue to onboard new parts of the organization simultaneously. Take the approach of "*don’t let perfect be the enemy of good*" and deploy secure credentials as much as possible. As more users sign in using phishing-resistant passwordless credentials, you reduce the attack surface of your environment.
 
@@ -63,7 +63,7 @@ Credentials | Description | Benefits | Authentication Methods|
 **Local** | You can use **local** credentials to authenticate on a device without needing to rely on external hardware. | Local credentials provide a great user experience as the user doesn't need to leave the device in order to successfully authenticate using the device’s own unlock gesture like Face ID or Windows Hello for Business face/fingerprint/PIN.|<li>Windows Hello For Business</li><li>Platform SSO for Mac</li><li>Certificate based authentication</li>
 
 
-- For *new users*, the registration and bootstrapping process takes them with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforcement-of-phishing-resistence-on-resources).
+- For *new users*, the registration and bootstrapping process takes them with no existing enterprise credentials, and verifies their identity. It bootstraps them into their first portable credential, and uses that portable credential to bootstrap other local credentials on each of their computing devices. After registration, the admin may [enforce phishing-resistant authentication for users in Microsoft Entra ID](how-to-deploy-phishing-resistant-passwordless-authentication.md#step-4-enforcement-of-phishing-resistance-on-resources).
 - For *existing users*, they must register for phishing-resistant passwordless on their existing devices, or using existing MFA credentials to bootstrap phishing-resistant passwordless credentials. 
 
 The end goal is the same for both types of users - most users should have at least one **portable** credential, and then **local** credentials on each computing device. 
@@ -233,7 +233,7 @@ Enable policy | Report-only
 
 Create this policy as early as possible in your rollout, preferably before even beginning your enrollment campaigns. This will ensure that you have a good historical dataset of which users and sign-ins would have been blocked by the policy if it was enforced.
 
-Next, use the workbook to analyze where user/device pairs are ready for enforcement. Download lists of users who are ready for enforcement and add them to groups created in alignment with your [enforcement policies](#recommended-enforcement-conditional-access-policies). Begin by selecting the read-only Conditional Access policy in the policy filter:
+Next, use the workbook to analyze where user/device pairs are ready for enforcement. Download lists of users who are ready for enforcement and add them to groups created in alignment with your [enforcement policies](#recommended-enforcement-of-conditional-access-policies). Begin by selecting the read-only Conditional Access policy in the policy filter:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook with a report-only Conditional Access policy selected." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png":::
 
